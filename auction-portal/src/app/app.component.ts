@@ -1,16 +1,17 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HeaderComponent } from './header/header.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, HeaderComponent],
   template: `
-    HELLO WORLD... {{title}}
-    <h1 class="bg-warning">Auction Portal</h1>
-    <router-outlet />
+    <app-header />
+    <main class="container">
+        [Menu]
+        <router-outlet />
+    </main>
   `,
   styles: [``]
 })
-export class AppComponent {
-  title = 'auction-portal';
-}
+export class AppComponent {}
