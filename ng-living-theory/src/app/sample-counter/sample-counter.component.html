@@ -1,1 +1,18 @@
-<p>sample-counter works!</p>
+<p>sample-counter works! {{ 100 + 20 + 10 + 2 * 2 }}</p>
+<div>
+  {{ [1, 2, 3] }}
+</div>
+<div>{{ { name: "Michał" } }} {{ JSON.stringify({ name: "Michał" }) }}</div>
+<div>{{ user | json | uppercase }}</div>
+
+<!-- <button class="button" title="{{ someText }}">{{ counter }}</button> -->
+
+<!-- input []   output () -->
+<button
+  #myButton
+  class="button"
+  (click)="incrementCounter($event, myButton)"
+  [title]="someText"
+>
+  {{ counter }} | {{ doubleCounter }}
+</button>

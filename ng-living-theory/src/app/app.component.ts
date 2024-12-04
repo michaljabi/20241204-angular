@@ -15,6 +15,8 @@ import { SampleCounterComponent } from './sample-counter/sample-counter.componen
         </div>
       </header>
       <app-sample-counter />
+      <app-sample-counter />
+      <app-sample-counter />
       <section class="columns mt-5">
         <app-menu></app-menu>
         <div class="column is-9 content">
