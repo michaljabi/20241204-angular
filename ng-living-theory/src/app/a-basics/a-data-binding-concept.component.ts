@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-a-data-binding-concept',
+  // selector: 'app-a-data-binding-concept',
   template: `
     <h2>Koncepcja bindowania widoku</h2>
     <h3 class="subtitle is-family-monospace">a-data-binding-concept</h3>
