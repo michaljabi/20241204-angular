@@ -7,6 +7,8 @@ import { HeaderComponent } from './header/header.component';
   imports: [RouterOutlet, HeaderComponent],
   template: `
     <app-header />
+    <app-header appTitle="Inny tytuł appki..." />
+    <app-header [appTitle]="sth" [userInfo]="{ name: 'Marian', isAdmin: true }" />
     <main class="container">
         [Menu]
         <router-outlet />
@@ -14,4 +16,6 @@ import { HeaderComponent } from './header/header.component';
   `,
   styles: [``]
 })
-export class AppComponent {}
+export class AppComponent {
+  sth= 'Something else'
+}
