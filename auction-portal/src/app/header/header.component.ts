@@ -6,8 +6,11 @@ import {Component, input/*, Input*/} from '@angular/core';
   template: `
     <header class="mb-2 p-5 bg-warning">
       <h1>{{ appTitle() }}</h1>
-      @if(userInfo().isAdmin) {
-        <h4> hello admin - {{userInfo().name}} </h4>
+      @let user = userInfo();
+      <!-- uproszczenie kodu z zastosowaniem @let - wyciągam wartość z sygnału jednorazowo -->
+      <!-- https://angular.dev/api/core/@let -->
+      @if(user.isAdmin) {
+        <h4> hello admin - {{user.name}} </h4>
       } @else {
         <h4> --- </h4>
       }
