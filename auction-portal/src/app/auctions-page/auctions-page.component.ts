@@ -1,20 +1,22 @@
 import { Component } from '@angular/core';
 import {AuctionsService} from '../auctions.service';
 import {AuctionItem} from '../auction-item';
-import {JsonPipe} from '@angular/common';
+import {AuctionCardComponent} from '../auction-card/auction-card.component';
 
 @Component({
   imports: [
-    JsonPipe
+    AuctionCardComponent
   ],
   template: `
     <div class="row">
-      @for(i of [1,2,3,4,5,6,7,8,9,10]; track i) {
+      @for(item of auctions; track item.id) {
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           [auction-card] (i)
+          <app-auction-card [auction]="item" />
         </div>
+      } @empty {
+         <div>Brak aukcji</div>
       }
-      {{auctions | json}}
     </div>
   `,
   styles: ``
