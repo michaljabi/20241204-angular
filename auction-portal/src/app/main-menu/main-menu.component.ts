@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {RouterLink, RouterLinkActive} from '@angular/router';
 // import {NgClass} from '@angular/common';
 
 interface MenuItem {
@@ -9,6 +10,8 @@ interface MenuItem {
 @Component({
   selector: 'app-main-menu',
   imports: [
+    RouterLink,
+    RouterLinkActive,
     // NgClass
   ],
   template: `
@@ -20,8 +23,9 @@ interface MenuItem {
       <div class="collapse navbar-collapse" [class.show]="isMenuOpen">
         <ul class="navbar-nav">
           @for(item of menuItems; track item.link) {
-            <li class="nav-item">
-              <a class="nav-link" [style.color]="linkColor" [href]="item.link">{{item.name}}</a>
+            <li class="nav-item" routerLinkActive="active">
+<!--              <a class="nav-link" [style.color]="linkColor" [routerLink]="item.link">{{item.name}}</a>-->
+              <a class="nav-link" [routerLink]="item.link" >{{item.name}}</a>
             </li>
           }
         </ul>
