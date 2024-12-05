@@ -32,6 +32,12 @@ importers:
       '@angular/router':
         specifier: ^19.0.0
         version: 19.0.1(@angular/common@19.0.1(@angular/core@19.0.1(rxjs@7.8.1)(zone.js@0.15.0))(rxjs@7.8.1))(@angular/core@19.0.1(rxjs@7.8.1)(zone.js@0.15.0))(@angular/platform-browser@19.0.1(@angular/animations@19.0.1(@angular/core@19.0.1(rxjs@7.8.1)(zone.js@0.15.0)))(@angular/common@19.0.1(@angular/core@19.0.1(rxjs@7.8.1)(zone.js@0.15.0))(rxjs@7.8.1))(@angular/core@19.0.1(rxjs@7.8.1)(zone.js@0.15.0)))(rxjs@7.8.1)
+      '@fortawesome/angular-fontawesome':
+        specifier: 1.0.0
+        version: 1.0.0(@angular/core@19.0.1(rxjs@7.8.1)(zone.js@0.15.0))
+      '@fortawesome/free-solid-svg-icons':
+        specifier: ^6.7.1
+        version: 6.7.1
       bootstrap:
         specifier: ^5.3.3
         version: 5.3.3(@popperjs/core@2.11.8)
@@ -1058,6 +1064,23 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@fortawesome/angular-fontawesome@1.0.0':
+    resolution: {integrity: sha512-EC2fYuXIuw2ld1kzJi+zysWus6OeGGfLQtbh0hW9zyyq5aBo8ZJkcJKBsVQ8E6Mg7nHyTWaXn+sdcXTPDWz+UQ==}
+    peerDependencies:
+      '@angular/core': ^19.0.0
+
+  '@fortawesome/fontawesome-common-types@6.7.1':
+    resolution: {integrity: sha512-gbDz3TwRrIPT3i0cDfujhshnXO9z03IT1UKRIVi/VEjpNHtSBIP2o5XSm+e816FzzCFEzAxPw09Z13n20PaQJQ==}
+    engines: {node: '>=6'}
+
+  '@fortawesome/fontawesome-svg-core@6.7.1':
+    resolution: {integrity: sha512-8dBIHbfsKlCk2jHQ9PoRBg2Z+4TwyE3vZICSnoDlnsHA6SiMlTwfmW6yX0lHsRmWJugkeb92sA0hZdkXJhuz+g==}
+    engines: {node: '>=6'}
+
+  '@fortawesome/free-solid-svg-icons@6.7.1':
+    resolution: {integrity: sha512-BTKc0b0mgjWZ2UDKVgmwaE0qt0cZs6ITcDgjrti5f/ki7aF5zs+N91V6hitGo3TItCFtnKg6cUVGdTmBFICFRg==}
+    engines: {node: '>=6'}
 
   '@inquirer/checkbox@4.0.2':
     resolution: {integrity: sha512-+gznPl8ip8P8HYHYecDtUtdsh1t2jvb+sWCD72GAiZ9m45RqwrLmReDaqdC0umQfamtFXVRoMVJ2/qINKGm9Tg==}
@@ -5559,6 +5582,22 @@ snapshots:
 
   '@esbuild/win32-x64@0.24.0':
     optional: true
+
+  '@fortawesome/angular-fontawesome@1.0.0(@angular/core@19.0.1(rxjs@7.8.1)(zone.js@0.15.0))':
+    dependencies:
+      '@angular/core': 19.0.1(rxjs@7.8.1)(zone.js@0.15.0)
+      '@fortawesome/fontawesome-svg-core': 6.7.1
+      tslib: 2.8.1
+
+  '@fortawesome/fontawesome-common-types@6.7.1': {}
+
+  '@fortawesome/fontawesome-svg-core@6.7.1':
+    dependencies:
+      '@fortawesome/fontawesome-common-types': 6.7.1
+
+  '@fortawesome/free-solid-svg-icons@6.7.1':
+    dependencies:
+      '@fortawesome/fontawesome-common-types': 6.7.1
 
   '@inquirer/checkbox@4.0.2(@types/node@22.10.1)':
     dependencies:
