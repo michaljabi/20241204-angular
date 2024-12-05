@@ -14,7 +14,8 @@ import { HeaderComponent } from './header/header.component';
         <router-outlet />
     </main>
   `,
-  styles: [``]
+  styles: [``],
+  // standalone: true // to be continued...
 })
 export class AppComponent {
   sth= 'Something else'
