@@ -18,7 +18,7 @@ import { VegetableService } from './vegetable.service';
         to zostanie przygotowana inna — druga instancja VegetableService i komponent nie otrzyma zmian,
         ponieważ komponent: communicate-with-long-distance będzie miał inną instancję!
     */
-    // VegetableService
+    // VegetableService,
   ],
 })
 export class InterestedComponent implements OnInit {

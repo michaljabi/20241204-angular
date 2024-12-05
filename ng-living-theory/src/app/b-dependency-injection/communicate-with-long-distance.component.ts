@@ -32,11 +32,20 @@ import { FormsModule } from '@angular/forms';
     </div>
   `,
   // stan będzie "ulotny" jeśli odkomentujesz:
-  // providers: [VegetableService],
+  providers: [VegetableService],
 })
 export class CommunicateWithLongDistanceComponent {
   // Korzystamy z Dependency Injections:
   private vegetableService = inject(VegetableService);
+
+  // private vegetableService: VegetableService;
+  //
+  // constructor(vegetableService: VegetableService) {
+  //   this.vegetableService = vegetableService;
+  // }
+
+  // Idiom:
+  // constructor(private vegetableService: VegetableService) {}
 
   inputValue = 'onion';
 

@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
-@Injectable({
-  // Tutaj informujemy Angular'a, że ten serwis ma być dostępny dla Injector'a, dla całej aplikacji!
-  providedIn: 'root',
-})
+// celowo nie daje provided in root, żeby mieć inną hierarchię injector'a, ElementInjector.
+@Injectable()
 export class VegetableService {
   // specjalny Subject, który potrafi jednocześnie odbierać i wysyłać dane:
   private vegetablesSubject = new BehaviorSubject([
@@ -33,17 +31,15 @@ export class VegetableService {
 // Powyżej nie ma tak na prawdę, rocket science — poza tym, że robimy to na podstawie Observables !
 // DLA PORÓWNANIA, zobacz: ... może inaczej — klasycznie
 // Zrobilibyśmy to tak:
-/*
-export class VegetableService {
 
-   private vegetables = ['lettuce', 'tomato', 'cucumber'];
+export class VegetableService2 {
+  private vegetables = ['lettuce', 'tomato', 'cucumber'];
 
-   add(veggie: string): void {
-     this.vegetables.push(veggie);
-   }
+  add(veggie: string): void {
+    this.vegetables.push(veggie);
+  }
 
-   getAll(): string[] {
-     return this.vegetables;
-   }
+  getAll(): string[] {
+    return this.vegetables;
+  }
 }
-*/
