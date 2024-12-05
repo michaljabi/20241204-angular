@@ -1,6 +1,6 @@
 import {Component, input} from '@angular/core';
 import {AuctionItem} from '../auction-item';
-import {SharedModule} from '../shared/shared.module';
+import {SharedModule} from '../../shared/shared.module';
 
 
 @Component({
