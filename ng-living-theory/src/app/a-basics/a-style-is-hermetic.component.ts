@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component /*, ViewEncapsulation*/ } from '@angular/core';
 
 @Component({
   selector: 'app-a-style-is-hermetic',
@@ -13,6 +13,7 @@ import { Component } from '@angular/core';
       <h3>Nie obowiązują w innych</h3>
     </div>
   `,
+  // encapsulation: ViewEncapsulation.None,
   styles: [
     `
       h1 {
