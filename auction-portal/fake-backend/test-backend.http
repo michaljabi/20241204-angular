@@ -1,0 +1,20 @@
+
+### Get all auctions
+GET http://localhost:3000/auctions
+
+
+### Get one auction
+GET http://localhost:3000/auctions/Ti72
+
+
+### What if no auction found ?
+GET http://localhost:3000/auctions/Ti72Wff
+
+### Add new auciton
+POST http://localhost:3000/auctions
+Content-Type: application/json
+
+{
+  "title": "Aukcja testowa",
+  "price": 9000
+}

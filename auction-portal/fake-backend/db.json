@@ -1,0 +1,48 @@
+{
+  "auctions": [
+    {
+      "id": "91TG",
+      "title": "Części do aparatu",
+      "imgUrl": "https://picsum.photos/id/36/200/200",
+      "description": "Jakiś opis",
+      "price": 2000
+    },
+    {
+      "id": "LqGA",
+      "title": "Mac Book",
+      "imgUrl": "https://picsum.photos/id/48/600/600",
+      "description": "Używany - ale sprawny",
+      "price": 4000
+    },
+    {
+      "id": "kV-c",
+      "title": "Smartfon",
+      "imgUrl": "https://picsum.photos/id/160/600/600",
+      "price": 800
+    },
+    {
+      "id": "Ti72",
+      "title": "Samochoód",
+      "imgUrl": "https://picsum.photos/id/183/600/600",
+      "description": "Zabytkowy ogórek",
+      "price": 1200
+    },
+    {
+      "title": "Most",
+      "price": 30000,
+      "imgUrl": "https://picsum.photos/id/134/600/600",
+      "description": "stalowy",
+      "id": "74Bs"
+    },
+    {
+      "id": "0072",
+      "title": "Aukcja testowa",
+      "price": 9000
+    },
+    {
+      "id": "2dae",
+      "title": "Aukcja testowa",
+      "price": 9000
+    }
+  ]
+}
