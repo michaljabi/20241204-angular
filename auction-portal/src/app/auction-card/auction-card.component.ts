@@ -1,12 +1,11 @@
 import {Component, input} from '@angular/core';
 import {AuctionItem} from '../auction-item';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
+import {SharedModule} from '../shared/shared.module';
 
 
 @Component({
   selector: 'app-auction-card',
-  imports: [FontAwesomeModule],
+  imports: [SharedModule],
   template: `
     <div class="card">
       @let item = auction();
@@ -17,7 +16,7 @@ import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
         <div class="d-flex justify-content-between align-content-center">
           <strong> {{item.price}} zł</strong>
           <button class="btn btn-primary">
-            <fa-icon [icon]="faCartPlus"></fa-icon>
+            <fa-icon icon="cart-plus"></fa-icon>
           </button>
         </div>
       </div>
@@ -26,7 +25,6 @@ import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
   styles: ``
 })
 export class AuctionCardComponent {
-  faCartPlus = faCartPlus;
   auction = input.required<AuctionItem>()
 
   // alternatywa
