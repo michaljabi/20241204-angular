@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import {AuctionsService} from '../auctions.service';
 import {AuctionItem} from '../auction-item';
 import {AuctionCardComponent} from '../auction-card/auction-card.component';
+import {CartService} from '../cart.service';
 
 // ZAWSZE this. jeśli chcesz odnieść się do pola klasy!
 // const auctionService = {}
@@ -15,7 +16,7 @@ import {AuctionCardComponent} from '../auction-card/auction-card.component';
       <!-- <div [hidden]="!isLoading">🔎...dziwne u mnie działa...💡</div> -->
       @for(item of auctions; track item.id) {
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <app-auction-card [auction]="item" />
+          <app-auction-card [isPromoted]="$index === 1" [auction]="item" (addToCart)="handleAddToCart($event)" />
         </div>
       } @empty {
         @if(isLoading) {
@@ -38,9 +39,10 @@ export class AuctionsPageComponent implements OnInit {
   isLoading = true;
   errorMessage = "";
   auctions: AuctionItem[] = [];
+  // cartService = inject(CartService);
 
   // dostarcz tutaj instancje AuctionService
-  constructor(private auctionService: AuctionsService, /* di cart.service */) {
+  constructor(private auctionService: AuctionsService, private cartService: CartService) {
 
     // // Happy Path (co zrobię jeśli strumień zwróci wartość)
     // auctionService.getAll().subscribe(auctions => {
@@ -70,5 +72,9 @@ export class AuctionsPageComponent implements OnInit {
       },
       // complete: () => console.log('done')
     })
+  }
+
+  handleAddToCart(auction: AuctionItem) {
+    this.cartService.addAuction(auction);
   }
 }

@@ -1,9 +1,10 @@
-import {Component, inject, input} from '@angular/core';
+import {Component, input, output} from '@angular/core';
 import {AuctionItem} from '../auction-item';
 import {SharedModule} from '../../shared/shared.module';
-import {CartService} from '../cart.service';
 
-
+// DUMMY component concept
+// - nie wiem od kogo mam dane
+// - nie wiem kto odbiera ode mnie dane.
 @Component({
   selector: 'app-auction-card',
   imports: [SharedModule],
@@ -15,8 +16,11 @@ import {CartService} from '../cart.service';
       <div class="card-body">
         <p class="card-text">{{item.description}}</p>
         <div class="d-flex justify-content-between align-content-center">
+          @if(isPromoted()) {
+            <div class="badge bg-danger"> PROMOCJA ! </div>
+          }
           <strong> {{item.price}} zł</strong>
-          <button class="btn btn-primary" (click)="cartService.addAuction(item)">
+          <button class="btn btn-primary" (click)="addToCart.emit(item)">
             <fa-icon icon="cart-plus"></fa-icon>
           </button>
         </div>
@@ -26,9 +30,10 @@ import {CartService} from '../cart.service';
   styles: ``
 })
 export class AuctionCardComponent {
+  isPromoted = input<boolean>(false)
   auction = input.required<AuctionItem>()
+  addToCart = output<AuctionItem>()
 
-  cartService = inject(CartService);
 
   // alternatywa
   // @Input({required: true}) auction: AuctionItem;
