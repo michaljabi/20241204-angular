@@ -1,8 +1,9 @@
 import { Routes } from '@angular/router';
-import { AuctionsPageComponent } from './auction/auctions-page/auctions-page.component';
-import {PromotionsPageComponent} from './auction/promotions-page/promotions-page.component';
+import { auctionRoutes } from './auction/auction.routes';
+import { NotFoundPageComponent } from './not-found-page.component';
 
 export const routes: Routes = [
-  { path: 'auctions', component: AuctionsPageComponent },
-  { path: 'promotions', component: PromotionsPageComponent },
+  { path: '', redirectTo: '/auctions', pathMatch: 'full' },
+  ...auctionRoutes,
+  { path: '**', component: NotFoundPageComponent },
 ];

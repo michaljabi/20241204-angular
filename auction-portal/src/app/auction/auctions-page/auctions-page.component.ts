@@ -11,7 +11,6 @@ import {AuctionCardComponent} from '../auction-card/auction-card.component';
     <div class="row">
       @for(item of auctions; track item.id) {
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          [auction-card] (i)
           <app-auction-card [auction]="item" />
         </div>
       } @empty {
