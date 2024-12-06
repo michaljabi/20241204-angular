@@ -4,5 +4,6 @@ import {PromotionsPageComponent} from './promotions-page/promotions-page.compone
 
 export const auctionRoutes: Routes = [
   { path: 'auctions', component: AuctionsPageComponent },
+  { path: 'auctions/:auctionId', component: AuctionsPageComponent }, // TO be continued.
   { path: 'promotions', component: PromotionsPageComponent },
 ];

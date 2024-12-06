@@ -14,6 +14,10 @@ import { NotificationComponent } from './notification/notification.component';
   imports: [
     CommonModule,
     FontAwesomeModule
+    // Router config jest Obiektem!
+    // RouterModule.forRoot([], {
+    //
+    // })
   ],
   exports: [FontAwesomeModule, SearchBarComponent, NotificationComponent]
 })
