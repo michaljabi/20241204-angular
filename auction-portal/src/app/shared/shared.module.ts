@@ -5,6 +5,7 @@ import { faGavel, faPlus, faShoppingBasket, faUser, faSearch, faCartPlus, faEdit
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { NotificationComponent } from './notification/notification.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { NotificationComponent } from './notification/notification.component';
   ],
   imports: [
     CommonModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule,
     // Router config jest Obiektem!
     // RouterModule.forRoot([], {
     //

@@ -3,16 +3,23 @@ import {AuctionsService} from '../auctions.service';
 import {AuctionItem} from '../auction-item';
 import {AuctionCardComponent} from '../auction-card/auction-card.component';
 import {CartService} from '../cart.service';
+import {SharedModule} from '../../shared/shared.module';
 
 // ZAWSZE this. jeśli chcesz odnieść się do pola klasy!
 // const auctionService = {}
 
 @Component({
   imports: [
-    AuctionCardComponent
+    AuctionCardComponent,
+    SharedModule
   ],
   template: `
     <div class="row">
+      <div class="col-12">
+            <app-search-bar (search)="searchText = $event" />
+
+        Czy działa: {{searchText}}
+      </div>
       <!-- <div [hidden]="!isLoading">🔎...dziwne u mnie działa...💡</div> -->
       @for(item of auctions; track item.id) {
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
@@ -39,6 +46,7 @@ export class AuctionsPageComponent implements OnInit {
   isLoading = true;
   errorMessage = "";
   auctions: AuctionItem[] = [];
+  searchText = '';
   // cartService = inject(CartService);
 
   // dostarcz tutaj instancje AuctionService
