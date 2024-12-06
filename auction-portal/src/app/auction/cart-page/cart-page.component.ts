@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   imports: [],
   template: `
     <p>
-      cart-page works!
+      cart-page works! JSON pipe!
     </p>
   `,
   styles: ``

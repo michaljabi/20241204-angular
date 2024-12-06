@@ -16,6 +16,7 @@ import { SharedModule } from './shared/shared.module';
     -->
     <main class="container">
         <app-main-menu />
+        <div class="alert alert-info"> Masz już {{0}} aukcji w koszyku </div>
         <router-outlet />
     </main>
   `,

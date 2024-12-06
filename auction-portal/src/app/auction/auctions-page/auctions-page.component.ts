@@ -12,6 +12,7 @@ import {AuctionCardComponent} from '../auction-card/auction-card.component';
   ],
   template: `
     <div class="row">
+      <!-- <div [hidden]="!isLoading">🔎...dziwne u mnie działa...💡</div> -->
       @for(item of auctions; track item.id) {
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           <app-auction-card [auction]="item" />
