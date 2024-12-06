@@ -27,7 +27,8 @@ export class AuctionsService {
   }
 
   // TS Utility type Omit
-  addNew(idLessItem: Omit<AuctionItem, 'id'>): void {
+  addNew(idLessItem: Omit<AuctionItem, 'id'>) {
     // POST ajax
+    return this.httpClient.post<AuctionItem>('http://localhost:3000/auctions', idLessItem)
   }
 }
