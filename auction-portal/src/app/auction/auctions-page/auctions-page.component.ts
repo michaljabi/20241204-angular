@@ -40,7 +40,7 @@ export class AuctionsPageComponent implements OnInit {
   auctions: AuctionItem[] = [];
 
   // dostarcz tutaj instancje AuctionService
-  constructor(private auctionService: AuctionsService) {
+  constructor(private auctionService: AuctionsService, /* di cart.service */) {
 
     // // Happy Path (co zrobię jeśli strumień zwróci wartość)
     // auctionService.getAll().subscribe(auctions => {

@@ -1,6 +1,7 @@
-import {Component, input} from '@angular/core';
+import {Component, inject, input} from '@angular/core';
 import {AuctionItem} from '../auction-item';
 import {SharedModule} from '../../shared/shared.module';
+import {CartService} from '../cart.service';
 
 
 @Component({
@@ -15,7 +16,7 @@ import {SharedModule} from '../../shared/shared.module';
         <p class="card-text">{{item.description}}</p>
         <div class="d-flex justify-content-between align-content-center">
           <strong> {{item.price}} zł</strong>
-          <button class="btn btn-primary">
+          <button class="btn btn-primary" (click)="cartService.addAuction(item)">
             <fa-icon icon="cart-plus"></fa-icon>
           </button>
         </div>
@@ -26,6 +27,8 @@ import {SharedModule} from '../../shared/shared.module';
 })
 export class AuctionCardComponent {
   auction = input.required<AuctionItem>()
+
+  cartService = inject(CartService);
 
   // alternatywa
   // @Input({required: true}) auction: AuctionItem;

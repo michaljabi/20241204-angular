@@ -12,7 +12,16 @@ interface CartItem {
 })
 export class CartService {
 
-  private cartItems: CartItem[] = [];
+  private cartItems: CartItem[] = [
+    // teraz już nie potrzebuje - przetestowałem.
+    /*{
+      id: "02",
+      // @ts-ignore
+      item: {},
+      //item: {} as AuctionItem,
+      quantity: 20
+    }*/
+  ];
 
   addAuction(auction: AuctionItem): void {
     const cartItem = this.cartItems.find(item => item.id === auction.id);

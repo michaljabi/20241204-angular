@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { SharedModule } from './shared/shared.module';
+import {CartService} from './auction/cart.service';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,10 @@ import { SharedModule } from './shared/shared.module';
     -->
     <main class="container">
         <app-main-menu />
-        <div class="alert alert-info"> Masz już {{0}} aukcji w koszyku </div>
+        @let count = cartService.getItemsCount();
+        @if(count) {
+            <div class="alert alert-info"> Masz już {{count}} aukcji w koszyku </div>
+        }
         <router-outlet />
     </main>
   `,
@@ -25,4 +29,14 @@ import { SharedModule } from './shared/shared.module';
 })
 export class AppComponent {
   sth= 'Something else'
+
+  // tak nie zadziała, bo to typ prosty !
+  //num = 0
+
+  constructor(public cartService: CartService) {
+    // this.num = cartService.getItemsCount()
+
+    // aby to zawsze zadziałało, to cart.service musi być napisany jako RxJS store stream albo Signal store
+  }
+
 }
