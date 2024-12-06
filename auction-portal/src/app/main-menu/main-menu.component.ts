@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {RouterLink, RouterLinkActive} from '@angular/router';
+import {SharedModule} from '../shared/shared.module';
 // import {NgClass} from '@angular/common';
 
 interface MenuItem {
@@ -12,6 +13,7 @@ interface MenuItem {
   imports: [
     RouterLink,
     RouterLinkActive,
+    SharedModule
     // NgClass
   ],
   template: `
@@ -29,6 +31,14 @@ interface MenuItem {
             </li>
           }
         </ul>
+      </div>
+      <div class="text-light">
+        <a class="btn btn-primary mx-2" routerLink="/add-auction">
+          <fa-icon icon="plus"></fa-icon> Dodaj
+        </a>
+        <a class="btn btn-secondary" routerLink="/cart">
+          <fa-icon icon="shopping-basket"></fa-icon> Koszyk
+        </a>
       </div>
     </nav>
   `,
