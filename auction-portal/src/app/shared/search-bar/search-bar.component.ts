@@ -1,4 +1,4 @@
-import {Component, output} from '@angular/core';
+import {Component, output/*, EventEmitter*/} from '@angular/core';
 
 @Component({
   selector: 'app-search-bar',
@@ -25,6 +25,9 @@ export class SearchBarComponent {
 
   // bez on z przodu! (np. onSearch)
   search = output<string>()
+
+  // @Output() search = new EventEmitter<string>() // to już jest RxJS Subject
+
 
   handleUpdate(ev: Event) {
     if(ev.target instanceof HTMLInputElement){

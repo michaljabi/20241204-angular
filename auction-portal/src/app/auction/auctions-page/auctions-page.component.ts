@@ -18,10 +18,10 @@ import {SharedModule} from '../../shared/shared.module';
       <div class="col-12">
             <app-search-bar (search)="searchText = $event" />
 
-        Czy działa: {{searchText}}
+<!--        Czy działa: {{searchText}}-->
       </div>
       <!-- <div [hidden]="!isLoading">🔎...dziwne u mnie działa...💡</div> -->
-      @for(item of auctions; track item.id) {
+      @for(item of filteredAuctions; track item.id) {
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           <app-auction-card [isPromoted]="$index === 1" [auction]="item" (addToCart)="handleAddToCart($event)" />
         </div>
@@ -62,6 +62,10 @@ export class AuctionsPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadAuctions()
+  }
+
+  get filteredAuctions(): AuctionItem[] {
+    return this.auctions.filter(a => a.title.toLowerCase().includes(this.searchText.toLowerCase()))
   }
 
   loadAuctions() {
